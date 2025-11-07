@@ -21,8 +21,7 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
-      - name: Rodar build
-        run: npm run build
+      # Removido o passo de build
 
       - name: Criar release no GitHub
         uses: softprops/action-gh-release@v2
