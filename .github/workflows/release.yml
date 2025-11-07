@@ -3,7 +3,10 @@ name: Release Workflow Agenda
 on:
   push:
     tags:
-      - 'v*.*.*' # Executa quando um novo tag de versão é criado
+      - 'v*.*.*' 
+
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -21,7 +24,8 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
-      # Removido o passo de build
+      - name: Listar arquivos antes do release
+        run: ls -R
 
       - name: Criar release no GitHub
         uses: softprops/action-gh-release@v2
